@@ -1,0 +1,79 @@
+@font-face {
+  font-family: "MadelynFill";
+  src: url("../src/assets/fonts/MadelynFill-Trial-Regular.otf")
+    format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CopperplateGothic";
+  src: url("../src/assets/fonts/Copperplate Gothic Std 29 BC.otf")
+    format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --color-bg: #f8e1e6; /*for the background*/
+  --color-title: #366baa; /*titles*/
+  --color-subtitle: #5384c6; /*subtitles*/
+
+  /* Derived Tones*/
+  --color-primary: #366baa;
+  --color-primary-light: #5384c6;
+  --color-primary-dark: #2a5689;
+  --color-accent: #84a9e0;
+  --color-muted: #a9c1e0;
+  --color-text: #1f1f1f;
+  --color-text-light: #444;
+  --color-border: #d3ddef;
+  --color-bg-alt: #ffffff;
+
+  /* Fonts */
+  --font-title: "MadelynFill", cursive;
+  --font-body: "CopperplateGothic", serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  min-height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-title);
+  font-family: var(--font-title);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--color-subtitle);
+}
+
+p {
+  font-size: 1rem;
+  color: var(--color-text-light);
+}
