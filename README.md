@@ -4,7 +4,6 @@
 
 # ClosetCue : Style Smarter with AI
 
-
 <p align="center">
   <em>✨ AI-powered outfit recommendation app — built with React, TailwindCSS, and Gemini API ✨</em>
 </p>
@@ -26,9 +25,9 @@
 ## 🧠 What is ClosetCue?
 
 **ClosetCue** is a sleek, frontend-only **virtual stylist app** that helps you choose outfits that fit your **mood, weather, and event** — powered by **Gemini AI**.
-No backend required. Just input your preferences, and let AI be your fashion guide. 
+No backend required. Just input your preferences, and let AI be your fashion guide.
 
-> 👗 *Your wardrobe, curated by intelligence.*
+> 👗 _Your wardrobe, curated by intelligence._
 
 ---
 
@@ -49,9 +48,9 @@ No backend required. Just input your preferences, and let AI be your fashion gui
   <img src="https://skillicons.dev/icons?i=react,html,css,tailwind,js,netlify" alt="Tech Stack" />
 </p>
 
-* **Frontend:** React, HTML, TailwindCSS, JavaScript
-* **AI Integration:** Gemini API
-* **Deployment:** Netlify
+- **Frontend:** React, HTML, TailwindCSS, JavaScript
+- **AI Integration:** Gemini API
+- **Deployment:** Netlify
 
 ---
 
@@ -59,9 +58,9 @@ No backend required. Just input your preferences, and let AI be your fashion gui
 
 ### 🧩 Prerequisites
 
-* Node.js 18+
-* npm or yarn
-* Gemini API Key (from Google AI Studio)
+- Node.js 18+
+- npm or yarn
+- Gemini API Key (from Google AI Studio)
 
 ### ⚡ Setup
 
@@ -77,10 +76,10 @@ npm install
 REACT_APP_GEMINI_API_KEY=your_api_key_here
 
 # Run the development server
-npm start
+npm run dev
 ```
 
-Open [**http://localhost:3000**](http://localhost:3000) to experience **ClosetCue** 👗
+Open [**http://localhost:5173**](http://localhost:5173) to experience **ClosetCue** 👗
 
 ---
 
@@ -98,16 +97,17 @@ We ❤️ contributions — especially during **Hacktoberfest 2025**! 🎉
 
 **You can help by:**
 
-* 🐞 Fixing bugs or improving UI components
-* 💅 Adding styling or animation improvements
-* 📖 Enhancing documentation
-* 🧠 Improving Gemini prompt logic or API calls
+- 🐞 Fixing bugs or improving UI components
+- 💅 Adding styling or animation improvements
+- 📖 Enhancing documentation
+- 🧠 Improving Gemini prompt logic or API calls
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for more info.
 
 ---
 
 ## ⭐ Star and Fork
+
 If you like this project, please consider giving it a ⭐ on GitHub and forking the repository to contribute or use it as a template for your own projects.
 
 ---
