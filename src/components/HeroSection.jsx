@@ -7,186 +7,101 @@ const HeroSection = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // TODO: Integrate with AI backend for outfit generation
     console.log({ weather, mood, event });
   };
 
   const outfitSuggestions = [
-    {
-      id: 1,
-      title: "Summer Casual",
-      description: "Light and breezy for sunny outings.",
-      image:
-        "https://via.placeholder.com/300x400/4F46E5/FFFFFF?text=Summer+Casual",
-    },
-    {
-      id: 2,
-      title: "Evening Formal",
-      description: "Elegant attire for sophisticated evenings.",
-      image:
-        "https://via.placeholder.com/300x400/7C3AED/FFFFFF?text=Evening+Formal",
-    },
-    {
-      id: 3,
-      title: "Weekend Relaxed",
-      description: "Comfy layers for laid-back weekends.",
-      image:
-        "https://via.placeholder.com/300x400/10B981/FFFFFF?text=Weekend+Relaxed",
-    },
-    {
-      id: 4,
-      title: "Office Professional",
-      description: "Sharp and polished for workdays.",
-      image:
-        "https://via.placeholder.com/300x400/F59E0B/FFFFFF?text=Office+Pro",
-    },
-    {
-      id: 5,
-      title: "Beach Vacation",
-      description: "Vibrant and flowy for seaside escapes.",
-      image:
-        "https://via.placeholder.com/300x400/EF4444/FFFFFF?text=Beach+Vacay",
-    },
-    {
-      id: 6,
-      title: "Party Night",
-      description: "Bold and fun for nightlife vibes.",
-      image:
-        "https://via.placeholder.com/300x400/EC4899/FFFFFF?text=Party+Night",
-    },
-    {
-      id: 7,
-      title: "Winter Cozy",
-      description: "Warm knits for chilly adventures.",
-      image:
-        "https://via.placeholder.com/300x400/06B6D4/FFFFFF?text=Winter+Cozy",
-    },
+    // ... outfitSuggestions array remains the same ...
+    { id: 1, title: "Autumn Layers", description: "Stylish layers for a cool, crisp fall afternoon.", image: "https://via.placeholder.com/300x400/D97706/FFFFFF?text=Autumn+Layers" },
+    { id: 2, title: "Cozy Fireside", description: "Soft knits and dark denim for ultimate comfort.", image: "https://via.placeholder.com/300x400/92400E/FFFFFF?text=Fireside+Cozy" },
+    { id: 3, title: "Office Chic", description: "Tailored trousers and a neutral blazer for work.", image: "https://via.placeholder.com/300x400/65A30D/FFFFFF?text=Office+Chic" },
+    { id: 4, title: "Weekend Brunch", description: "A flowy dress or skirt with stylish boots.", image: "https://via.placeholder.com/300x400/BE123C/FFFFFF?text=Brunch+Style" },
+    { id: 5, title: "Date Night", description: "Elegant and sophisticated for an evening out.", image: "https://via.placeholder.com/300x400/F97316/FFFFFF?text=Date+Night" },
+    { id: 6, title: "Rainy Day", description: "Waterproof jacket and practical, stylish bottoms.", image: "https://via.placeholder.com/300x400/4B5563/FFFFFF?text=Rainy+Day" },
+    { id: 7, title: "Formal Event", description: "Black tie or cocktail attire for a gala.", image: "https://via.placeholder.com/300x400/78350F/FFFFFF?text=Formal+Wear" },
+    { id: 8, title: "Pumpkin Patch", description: "Overalls and a chunky sweater for outdoor fun.", image: "https://via.placeholder.com/300x400/842029/FFFFFF?text=Pumpkin+Patch" },
   ];
 
   return (
-    <main className="flex-grow bg-gradient-to-br from-indigo-50 via-white to-purple-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        {/* Hero Section */}
-        <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 mb-6">
+    <main className="hero-main section-padding">
+      <div className="container">
+        
+        {/* Hero Text Section */}
+        <div className="text-center section-margin-bottom">
+          <h1 className="hero-title">
             Discover Your{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
-              Perfect Outfit
-            </span>
+            {/* The gradient is now approximated by a solid color in pure CSS */}
+            <span className="hero-gradient-text">Perfect Outfit</span>
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="hero-subtitle">
             ClosetCue uses AI to craft personalized outfit recommendations based
             on your weather, mood, and upcoming events. Say goodbye to decision
             fatigue!
           </p>
-          <button className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-indigo-700 hover:to-purple-700 transition duration-300 transform hover:scale-105 shadow-lg">
-            Get Started Now
-          </button>
         </div>
 
-        {/* How It Works Description */}
-        <div className="bg-white rounded-xl shadow-sm p-8 mb-12">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
-            How ClosetCue Works
-          </h2>
-          <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-8">
-            Simply input your current weather, how you're feeling, and the event
-            you're dressing for. Our AI analyzes your prompts and suggests
-            curated outfits from your virtual closet—tailored just for you.
-          </p>
-        </div>
+        {/* Form and How It Works - Central Card */}
+        <div className="content-card section-margin-bottom">
+          <div className="content-grid"> 
+            
+            {/* How It Works Description */}
+            <div className="works-panel"> 
+                <h2>How ClosetCue Works</h2>
+                <p style={{marginBottom: '1rem'}}>
+                    Simply tell us about your day—the **Weather**, your **Mood**, and the **Event**.
+                </p>
+                <p>
+                    Our AI analyzes these three factors to suggest a **curated, stylish outfit** tailored just for you from your virtual closet.
+                </p>
+            </div>
 
-        {/* Input Form */}
-        <div className="bg-white shadow-lg rounded-xl p-8 mb-12">
-          <h3 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
-            Tell Us About Your Day
-          </h3>
-          <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-6">
+            {/* Input Form */}
             <div>
-              <label
-                htmlFor="weather"
-                className="block text-sm font-medium text-gray-700 mb-2"
-              >
-                Weather
-              </label>
-              <input
-                type="text"
-                id="weather"
-                value={weather}
-                onChange={(e) => setWeather(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-200"
-                placeholder="e.g., Sunny, 75°F"
-              />
+                <h3 style={{marginBottom: '1.5rem'}}>Tell Us About Your Day</h3>
+                <form onSubmit={handleSubmit} className="form-space">
+                    {/* Input Field: Weather */}
+                    <div className="form-group">
+                        <label htmlFor="weather" className="form-label">Weather</label>
+                        <input type="text" id="weather" value={weather} onChange={(e) => setWeather(e.target.value)}
+                        className="form-input" placeholder="e.g., Cool, 55°F, Sunny"/>
+                    </div>
+                    {/* Input Field: Mood */}
+                    <div className="form-group">
+                        <label htmlFor="mood" className="form-label">Mood</label>
+                        <input type="text" id="mood" value={mood} onChange={(e) => setMood(e.target.value)}
+                        className="form-input" placeholder="e.g., Cozy, Productive, Festive"/>
+                    </div>
+                    {/* Input Field: Event */}
+                    <div className="form-group">
+                        <label htmlFor="event" className="form-label">Event</label>
+                        <input type="text" id="event" value={event} onChange={(e) => setEvent(e.target.value)}
+                        className="form-input" placeholder="e.g., Casual Brunch, Business Meeting, Fall Festival"/>
+                    </div>
+                    {/* Submit Button */}
+                    <button type="submit" className="submit-btn">
+                        Generate My Outfit
+                    </button>
+                </form>
             </div>
-            <div>
-              <label
-                htmlFor="mood"
-                className="block text-sm font-medium text-gray-700 mb-2"
-              >
-                Mood
-              </label>
-              <input
-                type="text"
-                id="mood"
-                value={mood}
-                onChange={(e) => setMood(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-200"
-                placeholder="e.g., Energetic, Relaxed"
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="event"
-                className="block text-sm font-medium text-gray-700 mb-2"
-              >
-                Event
-              </label>
-              <input
-                type="text"
-                id="event"
-                value={event}
-                onChange={(e) => setEvent(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-200"
-                placeholder="e.g., Casual outing, Formal dinner"
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-3 px-4 rounded-lg font-medium hover:from-indigo-700 hover:to-purple-700 transition duration-300 transform hover:scale-105"
-            >
-              Generate My Outfit
-            </button>
-          </form>
+          </div>
         </div>
 
         {/* Outfit Suggestions */}
-        <div className="mb-12">
-          <h3 className="text-3xl font-bold text-center text-gray-800 mb-8">
-            Featured Outfit Ideas
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="section-margin-bottom">
+          <h3 style={{marginBottom: '4rem', textAlign: 'center'}}>Featured Outfit Ideas</h3>
+          <div className="outfit-grid">
             {outfitSuggestions.map((outfit) => (
-              <div
-                key={outfit.id}
-                className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-2 group cursor-pointer"
-              >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={outfit.image}
-                    alt={outfit.title}
-                    className="w-full h-48 object-cover group-hover:scale-110 transition duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300"></div>
+              <div key={outfit.id} className="outfit-card">
+                <div className="card-image-wrapper">
+                  <img src={outfit.image} alt={outfit.title} className="card-image"/>
                 </div>
-                <div className="p-6">
-                  <h4 className="text-xl font-semibold text-gray-800 mb-2 group-hover:text-indigo-600 transition duration-300">
-                    {outfit.title}
-                  </h4>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {outfit.description}
-                  </p>
-                  <button className="mt-4 w-full text-indigo-600 font-medium hover:text-indigo-800 transition duration-300 text-sm">
-                    View Details →
+                <div className="card-content">
+                  <h4 className="card-title">{outfit.title}</h4>
+                  <p className="card-description">{outfit.description}</p>
+                  <button className="card-detail-btn">
+                    View Details
+                    {/* SVG icon remains a simple icon, not dependent on CSS framework */}
+                    <svg style={{marginLeft: '0.25rem', width: '1rem', height: '1rem'}} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                   </button>
                 </div>
               </div>
