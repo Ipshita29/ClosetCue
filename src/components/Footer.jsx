@@ -15,7 +15,7 @@ const Footer = () => {
             <a href="/contact" className="footer-link">Contact</a>
           </div>
           <div className="mt-4 md:mt-0">
-            <a href="https://github.com/Amanc77/ClosetCue" className="footer-link">GitHub</a>
+            <a href="https://github.com/Ipshita29/ClosetCue" className="footer-link">GitHub</a>
           </div>
         </div>
       </div>
