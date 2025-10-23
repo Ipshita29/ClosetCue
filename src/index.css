@@ -1,3 +1,4 @@
+@import "tailwindcss";
 @font-face {
   font-family: "MadelynFill";
   src: url("../src/assets/fonts/MadelynFill-Trial-Regular.otf")
