@@ -1,0 +1,314 @@
+@import "tailwindcss"; /* KEEP THIS LINE IF you are still processing with a tool that needs it, but conceptually we are replacing the utility classes */
+
+/* NOTE: For a pure non-Tailwind project, you would delete the @import "tailwindcss" line.
+  However, since your environment might need it for processing, I will leave it and 
+  add the necessary custom CSS classes below.
+*/
+
+/* FONT DEFINITIONS (Keep as is) */
+@font-face {
+  font-family: "MadelynFill";
+  src: url("../src/assets/fonts/MadelynFill-Trial-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CopperplateGothic";
+  src: url("../src/assets/fonts/Copperplate Gothic Std 29 BC.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 🍁 AUTUMN THEME - LIGHT MODE (Keep as is) */
+:root {
+  --color-bg: #fdfcf9;
+  --color-title: #78350f;
+  --color-subtitle: #b45309;
+  --color-primary: #f59e0b;
+  --color-primary-dark: #b45309;
+  --color-accent: #dc2626;
+  --color-text: #1c1917;
+  --color-text-light: #57534e;
+  --color-border: #d6d3d1;
+  --color-bg-alt: #ffffff;
+  --font-title: "MadelynFill", cursive, sans-serif;
+  --font-body: "CopperplateGothic", serif, system-ui; 
+}
+
+/* 🌙 AUTUMN THEME - DARK MODE (Keep as is) */
+[data-theme="dark"] {
+  --color-bg: #1c1917;
+  --color-title: #fcd34d;
+  --color-subtitle: #f59e0b;
+  --color-primary: #b45309;
+  --color-primary-dark: #a16207;
+  --color-accent: #dc2626;
+  --color-text: #f5f5f4;
+  --color-text-light: #d6d3d1;
+  --color-border: #44403c;
+  --color-bg-alt: #292524;
+}
+
+/* ------------------- GLOBAL RESET AND BASE STYLES ------------------- */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  min-height: 100vh; /* Use 100vh for full viewport height */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-title);
+  font-family: var(--font-title);
+  line-height: 1.2;
+}
+
+h1 { font-size: 3.5rem; font-weight: bold; }
+h2 { font-size: 2.25rem; color: var(--color-subtitle); }
+h3 { font-size: 1.75rem; color: var(--color-title); }
+p { font-size: 1.1rem; color: var(--color-text-light); }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ------------------- CUSTOM SEMANTIC CLASSES (Tailwind Replacement) ------------------- */
+
+/* Layout & Containers */
+.container {
+  max-width: 1280px; /* Equivalent to max-w-7xl */
+  margin: 0 auto;
+  padding: 0 1rem; /* Equivalent to px-4 */
+}
+.section-padding {
+    padding: 6rem 0; /* Equivalent to py-24 */
+}
+.section-margin-bottom {
+    margin-bottom: 6rem; /* Equivalent to mb-24 */
+}
+
+/* Navbar */
+.navbar {
+  background-color: #78350f; /* Deep Brown (from amber-900) */
+  color: white;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: 4rem; /* h-16 */
+  display: flex;
+  align-items: center;
+}
+.navbar-brand {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: bold;
+  color: #fcd34d; /* Light Amber (from amber-300) */
+}
+.navbar-link {
+  padding: 0.5rem 0.75rem; /* py-2 px-3 */
+  border-radius: 0.375rem; /* rounded-md */
+  transition: background-color 0.3s;
+}
+.navbar-link:hover {
+  background-color: #92400e; /* Darker Brown (from hover:bg-amber-800) */
+}
+.navbar-login-btn {
+  background-color: #f59e0b; /* Amber */
+  color: #78350f;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+}
+.navbar-login-btn:hover {
+  background-color: #fbbf24; /* Lighter Amber */
+}
+
+/* Hero Section */
+.hero-main {
+  flex-grow: 1;
+  background-color: var(--color-bg);
+}
+.hero-title {
+  font-size: 4.5rem; /* text-7xl */
+  font-weight: 900; /* font-extrabold */
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+}
+.hero-subtitle {
+  font-size: 1.25rem; /* text-xl */
+  color: var(--color-text-light);
+  margin-bottom: 2rem;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero-gradient-text {
+  /* Requires inline styling or a post-processor, standard CSS can't do Tailwind's text-gradient easily */
+  /* For pure CSS, we'll use one solid color that approximates the gradient look */
+  color: var(--color-subtitle);
+}
+
+/* Main Content Card (Form/How-It-Works) */
+.content-card {
+  background-color: var(--color-bg-alt);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); /* shadow-xl */
+  border-radius: 1rem; /* rounded-2xl */
+  padding: 5rem; /* p-20 */
+  border: 1px solid var(--color-border);
+}
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5rem; /* gap-20 */
+  align-items: flex-start;
+}
+@media (min-width: 1024px) { /* lg breakpoint */
+  .content-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* How It Works Panel */
+.works-panel {
+  padding-right: 5rem; /* pr-20 */
+  border-right: 1px solid var(--color-border);
+}
+
+/* Form Styling */
+.form-group {
+  margin-bottom: 1.5rem; /* space-y-6 */
+}
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-light);
+  margin-bottom: 0.5rem;
+}
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--color-border);
+  border-radius: 0.75rem;
+  transition: all 0.3s;
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+}
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-primary-dark);
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.2); /* Ring effect approximation */
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  font-weight: bold;
+  font-size: 1.125rem;
+  color: white;
+  border: none;
+  margin-top: 2rem; /* mt-8 */
+  
+  /* Fallback Solid Color for Gradient */
+  background-color: #b45309; 
+  /* Pure CSS Gradient Approximation */
+  background-image: linear-gradient(to right, #f59e0b, #dc2626); 
+  
+  transition: all 0.3s;
+  cursor: pointer;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+.submit-btn:hover {
+  transform: scale(1.01);
+}
+
+/* Outfit Cards */
+.outfit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem; /* gap-8 */
+}
+.outfit-card {
+  background-color: var(--color-bg-alt);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* shadow-lg */
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.outfit-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); /* shadow-2xl */
+  transform: translateY(-0.25rem);
+}
+.card-image-wrapper {
+  overflow: hidden;
+}
+.card-image {
+  width: 100%;
+  height: 14rem; /* h-56 */
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+.outfit-card:hover .card-image {
+  transform: scale(1.05);
+}
+.card-content {
+  padding: 1.5rem;
+}
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s;
+}
+.outfit-card:hover .card-title {
+  color: var(--color-subtitle);
+}
+.card-description {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+.card-detail-btn {
+  margin-top: 1rem;
+  width: 100%;
+  color: var(--color-primary-dark);
+  font-weight: bold;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-detail-btn:hover {
+  color: var(--color-primary);
+}
+
+/* Footer */
+.footer {
+  background-color: #78350f; /* Deep Brown (from amber-900) */
+  color: white;
+  padding: 2.5rem 0; /* py-10 */
+}
+.footer-text-accent {
+  color: #fcd34d;
+}
+.footer-link {
+  font-size: 0.875rem;
+  transition: color 0.3s;
+}
+.footer-link:hover {
+  color: #fcd34d;
+}
