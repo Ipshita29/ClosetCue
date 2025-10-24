@@ -286,23 +286,87 @@ a {
 }
 
 /* ------------------- FOOTER ------------------- */
+/* ------------------- UPDATED FOOTER ------------------- */
 .footer {
-  background-color: #78350f;
-  color: white;
-  padding: 2.5rem 0;
+  background: linear-gradient(135deg, #78350f, #92400e);
+  color: #fef3c7;
+  padding: 2.5rem 1.5rem;
+  font-family: var(--font-body);
   text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.footer-text-accent {
+.footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer h1 {
+  font-family: var(--font-title);
+  font-size: 1.75rem;
   color: #fcd34d;
+  margin-bottom: 0.25rem;
+}
+
+.footer p {
+  font-size: 0.95rem;
+  color: #fde68a;
+  opacity: 0.85;
 }
 
 .footer-link {
-  font-size: 0.9rem;
-  margin: 0 1rem;
-  transition: color 0.3s;
+  color: #fde68a;
+  font-size: 0.95rem;
+  margin: 0 0.75rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.footer-link::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+  background-color: #fcd34d;
+  transition: width 0.3s ease;
+  margin: 0.25rem auto 0;
 }
 
 .footer-link:hover {
   color: #fcd34d;
+}
+
+.footer-link:hover::after {
+  width: 100%;
+}
+
+/* 🌙 DARK MODE FOOTER */
+[data-theme="dark"] .footer {
+  background: linear-gradient(135deg, #1c1917, #292524);
+  color: #f5f5f4;
+  border-top: 1px solid #44403c;
+}
+
+[data-theme="dark"] .footer h1 {
+  color: #fcd34d;
+}
+
+[data-theme="dark"] .footer-link {
+  color: #e7e5e4;
+}
+
+[data-theme="dark"] .footer-link:hover {
+  color: #fbbf24;
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+  .footer {
+    padding: 2rem 1rem;
+  }
+
+  .footer-link {
+    display: block;
+    margin: 0.5rem 0;
+  }
 }
