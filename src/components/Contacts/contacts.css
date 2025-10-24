@@ -1,13 +1,14 @@
-/* contacts.css */
+/* contacts.css — Modern Autumn Theme 🍂 */
 
 /* Main Container */
 .contact-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #fdf2f8 0%, #faf5ff 50%, #f0f9ff 100%);
+  background: linear-gradient(135deg, #f8ede3 0%, #f6d6ad 40%, #d7a86e 100%);
   padding: 3rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: "Poppins", sans-serif;
 }
 
 /* Wrapper */
@@ -26,15 +27,15 @@
 
 .contact-title {
   font-size: 3rem;
-  font-weight: bold;
-  color: #1f2937;
-  margin-bottom: 2rem;
-  font-family: 'Georgia', serif;
+  font-weight: 700;
+  color: #4a3f35; /* deep brown */
+  margin-bottom: 1rem;
+  font-family: "Playfair Display", serif;
 }
 
 .contact-subtitle {
   font-size: 1.25rem;
-  color: #4b5563;
+  color: #6b4f3b;
   max-width: 42rem;
   margin: 0 auto;
   line-height: 1.7;
@@ -55,10 +56,11 @@
 
 /* Form Box */
 .contact-form-box {
-  background: white;
+  background: #fffaf3;
   border-radius: 1.5rem;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 25px 50px -12px rgba(82, 54, 21, 0.25);
   padding: 2rem;
+  border: 1px solid #e0c097;
 }
 
 /* Form Header */
@@ -69,14 +71,14 @@
 
 .form-title {
   font-size: 1.875rem;
-  font-weight: bold;
-  color: #1f2937;
-  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #4a3f35;
+  margin-bottom: 0.5rem;
 }
 
 .form-description {
-  color: #6b7280;
-  font-size: 1.125rem;
+  color: #7c5a3a;
+  font-size: 1.1rem;
 }
 
 /* Form Styles */
@@ -86,7 +88,7 @@
   gap: 2rem;
 }
 
-/* Form Row - For Name and Email */
+/* Form Row */
 .form-row {
   display: grid;
   grid-template-columns: 1fr;
@@ -101,9 +103,9 @@
 }
 
 .form-label {
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  color: #374151;
+  color: #5c3d2e;
 }
 
 .form-input,
@@ -111,24 +113,24 @@
 .form-textarea {
   width: 100%;
   padding: 1rem;
-  border: 1px solid #d1d5db;
+  border: 1px solid #d6b18a;
   border-radius: 0.75rem;
   font-size: 1rem;
-  transition: all 0.2s ease;
-  background: white;
+  transition: all 0.3s ease;
+  background: #fffdf8;
 }
 
 .form-input:focus,
 .form-select:focus,
 .form-textarea:focus {
   outline: none;
-  border-color: #ec4899;
-  box-shadow: 0 0 0 2px rgba(236, 72, 153, 0.2);
+  border-color: #c17f59;
+  box-shadow: 0 0 0 3px rgba(193, 127, 89, 0.25);
 }
 
 .form-input::placeholder,
 .form-textarea::placeholder {
-  color: #9ca3af;
+  color: #b08560;
 }
 
 .form-textarea {
@@ -140,8 +142,8 @@
 /* Submit Button */
 .form-submit-btn {
   width: 100%;
-  background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
-  color: white;
+  background: linear-gradient(135deg, #c17f59 0%, #a64b2a 100%);
+  color: #fffaf3;
   border: none;
   padding: 1rem 1.5rem;
   border-radius: 0.75rem;
@@ -153,8 +155,9 @@
 }
 
 .form-submit-btn:hover {
-  transform: scale(1.02);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transform: scale(1.03);
+  box-shadow: 0 20px 25px -5px rgba(97, 61, 26, 0.15);
+  background: linear-gradient(135deg, #d98b5f 0%, #b65a2a 100%);
 }
 
 .form-submit-btn:active {
@@ -165,13 +168,13 @@
 .contact-info {
   margin-top: 3rem;
   padding-top: 2.5rem;
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid #e6ccb2;
 }
 
 .contact-info-title {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #1f2937;
+  color: #4a3f35;
   margin-bottom: 1.5rem;
   text-align: center;
 }
@@ -187,16 +190,16 @@
   display: inline-flex;
   align-items: center;
   padding: 0.75rem 1.5rem;
-  background: #f3f4f6;
-  color: #374151;
+  background: #f6ead4;
+  color: #5c3d2e;
   border-radius: 0.5rem;
   text-decoration: none;
   font-size: 1.125rem;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 .contact-email-link:hover {
-  background: #e5e7eb;
+  background: #f0d8b8;
 }
 
 .email-icon {
@@ -207,12 +210,12 @@
 
 .response-time {
   font-size: 1rem;
-  color: #6b7280;
+  color: #8b6b50;
 }
 
 .response-highlight {
   font-weight: 600;
-  color: #059669;
+  color: #8c4b25;
 }
 
 /* Responsive Design */
@@ -220,21 +223,17 @@
   .contact-container {
     padding: 4rem 2rem;
   }
-  
   .contact-form-box {
     padding: 2.5rem;
   }
-  
   .form-row {
     grid-template-columns: 1fr 1fr;
   }
-  
   .contact-title {
-    font-size: 3.75rem;
+    font-size: 3.5rem;
   }
-  
   .contact-subtitle {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 }
 
@@ -242,7 +241,6 @@
   .contact-container {
     padding: 4rem 3rem;
   }
-  
   .contact-form-box {
     padding: 3rem;
   }
@@ -252,15 +250,12 @@
   .contact-title {
     font-size: 2.25rem;
   }
-  
   .contact-subtitle {
     font-size: 1.125rem;
   }
-  
   .contact-form-box {
     padding: 1.5rem;
   }
-  
   .form-title {
     font-size: 1.5rem;
   }
