@@ -1,7 +1,7 @@
 @import "tailwindcss"; /* keep if needed for your setup */
 
 /* SIMPLE MODERN FONTS */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap');
+@import url('[https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap](https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap)');
 
 /* 🍁 AUTUMN THEME - LIGHT MODE */
 :root {
@@ -285,24 +285,232 @@ a {
   color: var(--color-primary);
 }
 
+
 /* ------------------- FOOTER ------------------- */
 .footer {
-  background-color: #78350f;
-  color: white;
-  padding: 2.5rem 0;
+  background: linear-gradient(135deg, #78350f, #92400e);
+  color: #fef3c7;
+  padding: 2.5rem 1.5rem;
+  font-family: var(--font-body);
   text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.footer-text-accent {
+.footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer h1 {
+  font-family: var(--font-title);
+  font-size: 1.75rem;
   color: #fcd34d;
+  margin-bottom: 0.25rem;
+}
+
+.footer p {
+  font-size: 0.95rem;
+  color: #fde68a;
+  opacity: 0.85;
 }
 
 .footer-link {
-  font-size: 0.9rem;
-  margin: 0 1rem;
-  transition: color 0.3s;
+  color: #fde68a;
+  font-size: 0.95rem;
+  margin: 0 0.75rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.footer-link::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+  background-color: #fcd34d;
+  transition: width 0.3s ease;
+  margin: 0.25rem auto 0;
 }
 
 .footer-link:hover {
   color: #fcd34d;
+}
+
+.footer-link:hover::after {
+  width: 100%;
+}
+
+/* 🌙 DARK MODE FOOTER */
+[data-theme="dark"] .footer {
+  background: linear-gradient(135deg, #1c1917, #292524);
+  color: #f5f5f4;
+  border-top: 1px solid #44403c;
+}
+
+[data-theme="dark"] .footer h1 {
+  color: #fcd34d;
+}
+
+[data-theme="dark"] .footer-link {
+  color: #e7e5e4;
+}
+
+[data-theme="dark"] .footer-link:hover {
+  color: #fbbf24;
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+  .footer {
+    padding: 2rem 1rem;
+  }
+
+  .footer-link {
+    display: block;
+    margin: 0.5rem 0;
+  }
+}
+
+/* ------------------- LOGIN PAGE - ENHANCED (Theme Preserved) ------------------- */
+
+/* ------------------- LOGIN PAGE - WIDER & MORE ELEGANT ------------------- */
+
+.login-page {
+  /* No changes needed here, still centered and full-screen */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bg);
+  padding: 2rem;
+  font-family: var(--font-body);
+}
+
+.login-container {
+  /* --- KEY CHANGES FOR WIDER AND ELEGANT LOOK --- */
+  background-color: var(--color-bg-alt);
+  padding: 3.5rem; /* Increased padding for more internal breathing room */
+  border-radius: 1.5rem;
+  max-width: 500px; /* <<<<<< MADE WIDER: Increased from 420px to 500px */
+  width: 100%;
+  
+  /* Enhanced Shadow for a 'floating' feel */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08); /* Lighter shadow */
+  border: 1px solid var(--color-border); /* Subtle border */
+  
+  /* Smoother, premium transition */
+  transition: all 0.4s cubic-bezier(0.2, 0.5, 0.2, 1); 
+}
+
+.login-container:hover {
+  /* Gentler but noticeable lift */
+  transform: translateY(-8px); 
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15); /* Cleaner lift shadow */
+}
+
+.login-container h2 {
+  font-family: var(--font-title);
+  color: var(--color-title);
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2.5rem; /* More space below the title */
+  letter-spacing: -0.5px; 
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* Adjusted gap to fit new proportions */
+}
+
+.login-container label {
+  font-size: 1rem; /* Slightly larger label */
+  color: var(--color-text-light);
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+
+.login-container input {
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--color-border); /* Thinner initial border for sleekness */
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  color: var(--color-text);
+  transition: all 0.3s ease;
+}
+
+.login-container input:focus {
+  outline: none;
+  border-width: 2px;
+  border-color: var(--color-primary); /* Use main primary color for focus */
+  /* Use the lighter color for a soft glow */
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.15); 
+}
+
+/* Button Styling - Refined for elegance */
+.login-container button {
+  padding: 1rem;
+  margin-top: 1rem; /* Increased margin-top for separation */
+  border-radius: 0.75rem;
+  font-weight: 600; /* Slightly less bold */
+  font-size: 1.05rem;
+  /* Change text color to be light (better contrast on primary color) */
+  color: var(--color-bg-alt); 
+  background-color: var(--color-primary);
+  border: none;
+  cursor: pointer;
+  
+  /* Softer shadow for a less chunky look */
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3); 
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.login-container button:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px); /* Gentler lift */
+  box-shadow: 0 8px 15px rgba(245, 158, 11, 0.4);
+}
+
+.login-container p {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  margin-top: 1.5rem;
+}
+
+.login-container p a {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.login-container p a:hover {
+  color: var(--color-primary-dark);
+  text-decoration: none; 
+  border-bottom: 2px solid var(--color-primary); 
+}
+
+/* 🌙 DARK MODE LOGIN ENHANCEMENTS */
+
+[data-theme="dark"] .login-container {
+  background-color: var(--color-bg-alt);
+  border-color: var(--color-border);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .login-container:hover {
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .login-container button {
+  /* Use darker primary for button background */
+  background-color: var(--color-primary-dark);
+  color: var(--color-text); /* Use text color (light) for button text */
+  box-shadow: 0 4px 12px rgba(180, 83, 9, 0.4);
+}
+
+[data-theme="dark"] .login-container button:hover {
+  background-color: var(--color-primary); /* Lighter primary on hover */
 }
