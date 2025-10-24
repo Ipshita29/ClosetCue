@@ -1,30 +1,63 @@
 import React from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+  const location = useLocation();
+
+  const isActive = (path) => {
+    return location.pathname === path;
+  };
+
   return (
     <nav className="navbar">
       <div className="container">
         <div className="flex items-center justify-between h-full">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <h1 className="navbar-brand">ClosetCue</h1>
+              <Link to="/" className="navbar-brand">
+                ClosetCue
+              </Link>
             </div>
             {/* Nav Links */}
             <div className="hidden md:block ml-10">
               <div className="flex space-x-4">
-                <a href="/" className="navbar-link">Home</a>
-                <a href="/wardrobe" className="navbar-link">Wardrobe</a>
-                <a href="/suggestions" className="navbar-link">Suggestions</a>
-                <a href="/about" className="navbar-link">About</a>
+                <Link 
+                  to="/" 
+                  className={`navbar-link ${isActive("/") ? "navbar-link-active" : ""}`}
+                >
+                  Home
+                </Link>
+                <Link 
+                  to="/wardrobe" 
+                  className={`navbar-link ${isActive("/wardrobe") ? "navbar-link-active" : ""}`}
+                >
+                  Wardrobe
+                </Link>
+                <Link 
+                  to="/suggestions" 
+                  className={`navbar-link ${isActive("/suggestions") ? "navbar-link-active" : ""}`}
+                >
+                  Suggestions
+                </Link>
+                <Link 
+                  to="/about" 
+                  className={`navbar-link ${isActive("/about") ? "navbar-link-active" : ""}`}
+                >
+                  About
+                </Link>
               </div>
             </div>
           </div>
           {/* Login Button */}
           <div className="hidden md:block">
-            <a href="/login" className="navbar-login-btn">Login</a>
+            <Link 
+              to="/login" 
+              className={`navbar-login-btn ${isActive("/login") ? "navbar-login-btn-active" : ""}`}
+            >
+              Login
+            </Link>
           </div>
-          {/* Mobile Button - Requires utility classes for responsiveness, 
-             but we'll keep the structure semantic where possible */}
+          {/* Mobile Menu Button */}
           <div className="-mr-2 flex md:hidden">
             <button className="inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-amber-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-amber-900 focus:ring-white">
               <span className="sr-only">Open main menu</span>
