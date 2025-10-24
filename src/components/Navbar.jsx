@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -12,19 +13,18 @@ const Navbar = () => {
             {/* Nav Links */}
             <div className="hidden md:block ml-10">
               <div className="flex space-x-4">
-                <a href="/" className="navbar-link">Home</a>
-                <a href="/wardrobe" className="navbar-link">Wardrobe</a>
-                <a href="/suggestions" className="navbar-link">Suggestions</a>
-                <a href="/about" className="navbar-link">About</a>
+                <Link to="/" className="navbar-link">Home</Link>
+                <Link to="/wardrobe" className="navbar-link">Wardrobe</Link>
+                <Link to="/suggestions" className="navbar-link">Suggestions</Link>
+                <Link to="/about" className="navbar-link">About</Link>
               </div>
             </div>
           </div>
           {/* Login Button */}
           <div className="hidden md:block">
-            <a href="/login" className="navbar-login-btn">Login</a>
+            <Link to="/login" className="navbar-login-btn">Login</Link>
           </div>
-          {/* Mobile Button - Requires utility classes for responsiveness, 
-             but we'll keep the structure semantic where possible */}
+          {/* Mobile Button */}
           <div className="-mr-2 flex md:hidden">
             <button className="inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-amber-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-amber-900 focus:ring-white">
               <span className="sr-only">Open main menu</span>
