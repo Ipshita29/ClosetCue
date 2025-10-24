@@ -21,26 +21,26 @@ const Navbar = () => {
             {/* Nav Links */}
             <div className="hidden md:block ml-10">
               <div className="flex space-x-4">
-                <Link 
-                  to="/" 
+                <Link
+                  to="/"
                   className={`navbar-link ${isActive("/") ? "navbar-link-active" : ""}`}
                 >
                   Home
                 </Link>
-                <Link 
-                  to="/wardrobe" 
+                <Link
+                  to="/wardrobe"
                   className={`navbar-link ${isActive("/wardrobe") ? "navbar-link-active" : ""}`}
                 >
                   Wardrobe
                 </Link>
-                <Link 
-                  to="/suggestions" 
+                <Link
+                  to="/suggestions"
                   className={`navbar-link ${isActive("/suggestions") ? "navbar-link-active" : ""}`}
                 >
                   Suggestions
                 </Link>
-                <Link 
-                  to="/about" 
+                <Link
+                  to="/about"
                   className={`navbar-link ${isActive("/about") ? "navbar-link-active" : ""}`}
                 >
                   About
@@ -50,8 +50,8 @@ const Navbar = () => {
           </div>
           {/* Login Button */}
           <div className="hidden md:block">
-            <Link 
-              to="/login" 
+            <Link
+              to="/login"
               className={`navbar-login-btn ${isActive("/login") ? "navbar-login-btn-active" : ""}`}
             >
               Login
@@ -61,8 +61,18 @@ const Navbar = () => {
           <div className="-mr-2 flex md:hidden">
             <button className="inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-amber-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-amber-900 focus:ring-white">
               <span className="sr-only">Open main menu</span>
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               </svg>
             </button>
           </div>
