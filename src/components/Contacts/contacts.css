@@ -1,14 +1,18 @@
-/* contacts.css — Modern Autumn Theme 🍂 */
+/* contacts.css — Modern Autumn Theme 🍂
+   Uses shared CSS variables from `App.css` so the whole site keeps
+   a consistent cozy/autumn look. */
 
 /* Main Container */
 .contact-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f8ede3 0%, #f6d6ad 40%, #d7a86e 100%);
+  /* soft gradient using the site variables */
+  background: linear-gradient(135deg, var(--color-bg) 0%, rgba(245,158,11,0.06) 40%, var(--color-bg-alt) 100%);
   padding: 3rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Poppins", sans-serif;
+  font-family: var(--font-body);
+  color: var(--color-text);
 }
 
 /* Wrapper */
@@ -28,14 +32,14 @@
 .contact-title {
   font-size: 3rem;
   font-weight: 700;
-  color: #4a3f35; /* deep brown */
+  color: var(--color-title);
   margin-bottom: 1rem;
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-title);
 }
 
 .contact-subtitle {
   font-size: 1.25rem;
-  color: #6b4f3b;
+  color: var(--color-text-light);
   max-width: 42rem;
   margin: 0 auto;
   line-height: 1.7;
@@ -56,11 +60,12 @@
 
 /* Form Box */
 .contact-form-box {
-  background: #fffaf3;
+  background: var(--color-bg-alt);
   border-radius: 1.5rem;
-  box-shadow: 0 25px 50px -12px rgba(82, 54, 21, 0.25);
+  /* keep a warm shadow but fall back to a neutral shadow */
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
   padding: 2rem;
-  border: 1px solid #e0c097;
+  border: 1px solid var(--color-border);
 }
 
 /* Form Header */
@@ -72,12 +77,12 @@
 .form-title {
   font-size: 1.875rem;
   font-weight: 700;
-  color: #4a3f35;
+  color: var(--color-title);
   margin-bottom: 0.5rem;
 }
 
 .form-description {
-  color: #7c5a3a;
+  color: var(--color-text-light);
   font-size: 1.1rem;
 }
 
@@ -105,7 +110,7 @@
 .form-label {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #5c3d2e;
+  color: var(--color-text-light);
 }
 
 .form-input,
@@ -113,24 +118,26 @@
 .form-textarea {
   width: 100%;
   padding: 1rem;
-  border: 1px solid #d6b18a;
+  border: 1px solid var(--color-border);
   border-radius: 0.75rem;
   font-size: 1rem;
   transition: all 0.3s ease;
-  background: #fffdf8;
+  background: var(--color-bg-alt);
+  color: var(--color-text);
 }
 
 .form-input:focus,
 .form-select:focus,
 .form-textarea:focus {
   outline: none;
-  border-color: #c17f59;
-  box-shadow: 0 0 0 3px rgba(193, 127, 89, 0.25);
+  border-color: var(--color-primary-dark);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.18);
 }
 
 .form-input::placeholder,
 .form-textarea::placeholder {
-  color: #b08560;
+  color: var(--color-primary-dark);
+  opacity: 0.75;
 }
 
 .form-textarea {
@@ -142,8 +149,8 @@
 /* Submit Button */
 .form-submit-btn {
   width: 100%;
-  background: linear-gradient(135deg, #c17f59 0%, #a64b2a 100%);
-  color: #fffaf3;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: var(--color-bg-alt);
   border: none;
   padding: 1rem 1.5rem;
   border-radius: 0.75rem;
@@ -156,8 +163,8 @@
 
 .form-submit-btn:hover {
   transform: scale(1.03);
-  box-shadow: 0 20px 25px -5px rgba(97, 61, 26, 0.15);
-  background: linear-gradient(135deg, #d98b5f 0%, #b65a2a 100%);
+  box-shadow: 0 20px 25px -5px rgba(0,0,0,0.12);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
 }
 
 .form-submit-btn:active {
@@ -168,13 +175,13 @@
 .contact-info {
   margin-top: 3rem;
   padding-top: 2.5rem;
-  border-top: 1px solid #e6ccb2;
+  border-top: 1px solid var(--color-border);
 }
 
 .contact-info-title {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #4a3f35;
+  color: var(--color-title);
   margin-bottom: 1.5rem;
   text-align: center;
 }
@@ -190,8 +197,8 @@
   display: inline-flex;
   align-items: center;
   padding: 0.75rem 1.5rem;
-  background: #f6ead4;
-  color: #5c3d2e;
+  background: rgba(255, 250, 240, 0.9);
+  color: var(--color-text);
   border-radius: 0.5rem;
   text-decoration: none;
   font-size: 1.125rem;
@@ -199,7 +206,7 @@
 }
 
 .contact-email-link:hover {
-  background: #f0d8b8;
+  background: rgba(240,216,184,0.95);
 }
 
 .email-icon {
@@ -210,12 +217,12 @@
 
 .response-time {
   font-size: 1rem;
-  color: #8b6b50;
+  color: var(--color-text-light);
 }
 
 .response-highlight {
   font-weight: 600;
-  color: #8c4b25;
+  color: var(--color-primary-dark);
 }
 
 /* Responsive Design */

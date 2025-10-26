@@ -1,11 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap');
 
-/* Optional: @charset or empty @layer here */
+/* Keep index.css lightweight. The main theme variables live in App.css
+   which is imported by `App.jsx`. This file only contains minimal global
+   resets or helper rules so the App theme variables aren't accidentally
+   overridden here. */
 
-:root {
-  --color-bg: #fdfcf9;
-}
-
-.some-class {
-  color: red;
+/* small helper to avoid accidental development leftovers */
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
