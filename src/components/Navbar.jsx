@@ -19,7 +19,7 @@ const Navbar = () => {
               </Link>
             </div>
             {/* Nav Links */}
-            <div className="hidden md:block ml-10">
+          
               <div className="flex space-x-4">
                 <Link
                   to="/"
@@ -33,12 +33,7 @@ const Navbar = () => {
                 >
                   Wardrobe
                 </Link>
-                <Link
-                  to="/suggestions"
-                  className={`navbar-link ${isActive("/suggestions") ? "navbar-link-active" : ""}`}
-                >
-                  Suggestions
-                </Link>
+                
                 <Link
                   to="/about"
                   className={`navbar-link ${isActive("/about") ? "navbar-link-active" : ""}`}
@@ -46,7 +41,7 @@ const Navbar = () => {
                   About
                 </Link>
               </div>
-            </div>
+   
           </div>
           {/* Login Button */}
           <div className="hidden md:block">
