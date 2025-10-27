@@ -31,10 +31,16 @@ const HeroSection = () => {
   ];
 
   return (
-    <main className="hero-main section-padding">
+      <main className="hero-main section-padding autumn-pattern">
+        {/* Falling leaves decoration */}
+        <div className="autumn-leaf" style={{ left: '10%', animationDelay: '0s' }}></div>
+        <div className="autumn-leaf" style={{ left: '30%', animationDelay: '-3s' }}></div>
+        <div className="autumn-leaf" style={{ left: '70%', animationDelay: '-6s' }}></div>
+        <div className="autumn-leaf" style={{ left: '90%', animationDelay: '-4s' }}></div>
+
       <div className="container">
         {/* Hero Text Section */}
-        <div className="text-center section-margin-bottom">
+          <div className="text-center section-margin-bottom autumn-overlay">
           <h1 className="hero-title">
             Discover Your{" "}
             <span className="hero-gradient-text">Perfect Outfit</span>
@@ -44,10 +50,11 @@ const HeroSection = () => {
             on your weather, mood, and upcoming events. Say goodbye to decision
             fatigue!
           </p>
+          <div className="autumn-divider"></div>
         </div>
 
         {/* How It Works + Form */}
-        <div className="content-card section-margin-bottom">
+        <div className="content-card section-margin-bottom autumn-card">
           <div className="content-grid">
             {/* How It Works */}
             <div className="works-panel">
@@ -113,7 +120,7 @@ const HeroSection = () => {
           <h3 style={{ marginBottom: "4rem", textAlign: "center" }}>Featured Outfit Ideas</h3>
           <div className="outfit-grid">
             {outfitSuggestions.map((outfit) => (
-              <div key={outfit.id} className="outfit-card">
+              <div key={outfit.id} className="outfit-card autumn-card">
                 <div className="card-image-wrapper">
                   <img src={outfit.image} alt={outfit.title} className="card-image" />
                 </div>
