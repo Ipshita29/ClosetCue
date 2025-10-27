@@ -1,7 +1,6 @@
-@import "tailwindcss"; /* keep if needed for your setup */
-
-/* SIMPLE MODERN FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap');
+
+@import "tailwindcss"; /* keep if needed for your setup */
 
 /* 🍁 AUTUMN THEME - LIGHT MODE */
 
@@ -767,10 +766,6 @@ a {
   display: flex;
   align-items: center; 
   justify-content: center; 
-/* ------------------- LOGIN PAGE - ENHANCED (Theme Preserved) ------------------- */
-
-.login-page {
-  /* Aligns the container vertically and horizontally */
   min-height: 100vh;
   display: flex;
   align-items: center; /* Vertical centering */
