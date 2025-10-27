@@ -111,7 +111,6 @@ html, body {
   color: var(--color-text);
   line-height: 1.6;
   scroll-behavior: smooth;
-  /* 🔑 CRITICAL CHANGE: Ensure the body/html take up the full viewport height */
   height: 100%;
   min-height: 100vh;
 }
@@ -761,6 +760,13 @@ a {
   }
 }
 
+/* ------------------- LOGIN PAGE - ENHANCED READABILITY AND SPACING 🍁 ------------------- */
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
 /* ------------------- LOGIN PAGE - ENHANCED (Theme Preserved) ------------------- */
 
 .login-page {
@@ -805,22 +811,26 @@ a {
 .login-container form {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem; 
+  /* Increased gap for better spacing */
+  gap: 1.75rem; 
 }
 
-.login-container label {
-  font-size: 1rem; 
-  color: var(--color-text-light);
-  font-weight: 500;
-  margin-bottom: 0.3rem;
+/* 🔑 READABILITY IMPROVEMENT: Increased Label Font Size */
+.login-container .form-field label {
+  font-size: 1.1rem; /* Increased from 1rem */
+  color: var(--color-text); /* Use main text color for high contrast */
+  font-weight: 600; /* Bolder */
+  margin-bottom: 0.5rem; /* Increased spacing */
 }
 
+/* 🔑 READABILITY IMPROVEMENT: Increased Input Font Size and Padding */
 .login-container input {
-  padding: 1rem 1.25rem;
-  border: 1px solid var(--color-border); 
-  border-radius: 0.75rem;
-  font-size: 1rem;
+  padding: 1.1rem 1.4rem; /* Increased padding, matching signup */
+  border: 2px solid var(--color-border); /* Slightly thicker initial border */
+  border-radius: 0.85rem; /* Slightly more rounded */
+  font-size: 1.15rem; /* Increased from 1rem */
   color: var(--color-text);
+  line-height: 1.4; /* Ensures better vertical alignment/readability */
   transition: all 0.3s ease;
 }
 
@@ -828,16 +838,16 @@ a {
   outline: none;
   border-width: 2px;
   border-color: var(--color-primary); 
-  box-shadow: 0 0 0 4px var(--color-highlight); 
+  box-shadow: 0 0 0 5px var(--color-highlight); /* Slightly wider glow */
 }
 
 /* Button Styling - Refined for elegance */
 .login-container button {
-  padding: 1rem;
-  margin-top: 1rem; 
-  border-radius: 0.75rem;
-  font-weight: 600;
-  font-size: 1.05rem;
+  padding: 1.1rem; /* Increased padding, matching signup */
+  margin-top: 1.5rem; /* Increased margin, matching signup */
+  border-radius: 0.85rem;
+  font-weight: 700; /* Bolder button text */
+  font-size: 1.2rem; /* Increased button text size, matching signup */
   color: var(--color-bg-alt); 
   background-image: var(--gradient-sunset);
   border: none;
@@ -853,24 +863,25 @@ a {
   filter: saturate(1.05) brightness(1.02);
 }
 
-.login-container p {
+/* 🔑 READABILITY IMPROVEMENT: Increased Prompt Font Size */
+.login-container .signup-prompt {
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--color-text-light);
-  margin-top: 1.5rem;
+  margin-top: 2.5rem; /* Increased margin */
 }
 
-.login-container p a {
-  color: var(--color-primary);
+.login-container .signup-prompt a {
+  color: var(--color-primary-dark);
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
+  border-bottom: 2px solid transparent; 
 }
 
-.login-container p a:hover {
-  color: var(--color-primary-dark);
-  text-decoration: none; 
-  border-bottom: 2px solid var(--color-primary); 
+.login-container .signup-prompt a:hover {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
 }
 
 /* 🌙 DARK MODE LOGIN ENHANCEMENTS */
@@ -885,6 +896,15 @@ a {
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
 }
 
+[data-theme="dark"] .login-container .form-field label {
+    color: var(--color-text);
+}
+
+[data-theme="dark"] .login-container input {
+    border-color: var(--color-border);
+}
+
+
 [data-theme="dark"] .login-container button {
   background-image: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
   color: var(--color-text); 
@@ -893,6 +913,15 @@ a {
 
 [data-theme="dark"] .login-container button:hover {
   background-image: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+}
+
+[data-theme="dark"] .login-container .signup-prompt a {
+    color: var(--color-primary);
+}
+
+[data-theme="dark"] .login-container .signup-prompt a:hover {
+    color: var(--color-subtitle);
+    border-bottom-color: var(--color-subtitle);
 }
 
 /* ------------------- SIGNUP PAGE - ENHANCED AUTUMN THEME 🍁 ------------------- */
