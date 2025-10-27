@@ -1,7 +1,7 @@
-/* SIMPLE MODERN FONTS */
-@import url('[https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap](https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap)');
-
 @import "tailwindcss"; /* keep if needed for your setup */
+
+/* SIMPLE MODERN FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap');
 
 /* 🍁 AUTUMN THEME - LIGHT MODE */
 
@@ -25,8 +25,7 @@
 
   /* Autumn palette accents */
   --color-maple: #C41E3A;  /* Maple leaf red */
-  --color-gold: #CC8B3E;  /* Harvest gold */
-  --color-rust: #944E1F;  /* Rich rust */
+  --color-gold: #CC8B3E;  --color-rust: #944E1F;  /* Rich rust */
   --color-leaf: #4B5D16;  /* Forest green */
   --color-amber: #FF9F1C;  /* Warm amber */
 
@@ -112,6 +111,7 @@ html, body {
   color: var(--color-text);
   line-height: 1.6;
   scroll-behavior: smooth;
+  height: 100%;
   min-height: 100vh;
 }
 
@@ -676,10 +676,9 @@ a {
 }
 
 /* ------------------- FOOTER ------------------- */
-/* ------------------- UPDATED FOOTER ------------------- */
 .footer {
-  background: linear-gradient(135deg, #78350f, #92400e);
-  color: #fef3c7;
+  background: linear-gradient(135deg, var(--color-bark), var(--color-rust));
+  color: var(--color-wheat);
   padding: 2.5rem 1.5rem;
   font-family: var(--font-body);
   text-align: center;
@@ -694,18 +693,18 @@ a {
 .footer h1 {
   font-family: var(--font-title);
   font-size: 1.75rem;
-  color: #fcd34d;
+  color: var(--color-gold);
   margin-bottom: 0.25rem;
 }
 
 .footer p {
   font-size: 0.95rem;
-  color: #fde68a;
+  color: var(--color-wheat);
   opacity: 0.85;
 }
 
 .footer-link {
-  color: #fde68a;
+  color: var(--color-wheat);
   font-size: 0.95rem;
   margin: 0 0.75rem;
   transition: all 0.3s ease;
@@ -717,13 +716,13 @@ a {
   display: block;
   height: 2px;
   width: 0;
-  background-color: #fcd34d;
+  background-color: var(--color-gold);
   transition: width 0.3s ease;
   margin: 0.25rem auto 0;
 }
 
 .footer-link:hover {
-  color: #fcd34d;
+  color: var(--color-gold);
 }
 
 .footer-link:hover::after {
@@ -732,21 +731,21 @@ a {
 
 /* 🌙 DARK MODE FOOTER */
 [data-theme="dark"] .footer {
-  background: linear-gradient(135deg, #1c1917, #292524);
-  color: #f5f5f4;
-  border-top: 1px solid #44403c;
+  background: linear-gradient(135deg, var(--color-bark), var(--color-leaf));
+  color: var(--color-text);
+  border-top: 1px solid var(--color-border);
 }
 
 [data-theme="dark"] .footer h1 {
-  color: #fcd34d;
+  color: var(--color-gold);
 }
 
 [data-theme="dark"] .footer-link {
-  color: #e7e5e4;
+  color: var(--color-text-light);
 }
 
 [data-theme="dark"] .footer-link:hover {
-  color: #fbbf24;
+  color: var(--color-gold);
 }
 
 /* 📱 RESPONSIVE */
@@ -761,41 +760,34 @@ a {
   }
 }
 
-/* ------------------- LOGIN PAGE - ENHANCED (Theme Preserved) ------------------- */
-
-/* ------------------- LOGIN PAGE - WIDER & MORE ELEGANT ------------------- */
+/* ------------------- LOGIN PAGE - ENHANCED READABILITY AND SPACING 🍁 ------------------- */
 
 .login-page {
-  /* No changes needed here, still centered and full-screen */
   min-height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: center; 
+  justify-content: center; 
   background-color: var(--color-bg);
   padding: 2rem;
   font-family: var(--font-body);
 }
 
 .login-container {
-  /* --- KEY CHANGES FOR WIDER AND ELEGANT LOOK --- */
   background-color: var(--color-bg-alt);
-  padding: 3.5rem; /* Increased padding for more internal breathing room */
+  padding: 3.5rem;
   border-radius: 1.5rem;
-  max-width: 500px; /* <<<<<< MADE WIDER: Increased from 420px to 500px */
+  max-width: 500px;
   width: 100%;
   
-  /* Enhanced Shadow for a 'floating' feel */
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08); /* Lighter shadow */
-  border: 1px solid var(--color-border); /* Subtle border */
+  box-shadow: 0 10px 40px var(--color-shadow);
+  border: 1px solid var(--color-border);
   
-  /* Smoother, premium transition */
   transition: all 0.4s cubic-bezier(0.2, 0.5, 0.2, 1); 
 }
 
 .login-container:hover {
-  /* Gentler but noticeable lift */
   transform: translateY(-8px); 
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15); /* Cleaner lift shadow */
+  box-shadow: 0 20px 50px var(--color-shadow);
 }
 
 .login-container h2 {
@@ -804,47 +796,50 @@ a {
   font-size: 2.5rem;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 2.5rem; /* More space below the title */
+  margin-bottom: 2.5rem;
   letter-spacing: -0.5px; 
 }
 
 .login-container form {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem; /* Adjusted gap to fit new proportions */
+  /* Increased gap for better spacing */
+  gap: 1.75rem; 
 }
 
-.login-container label {
-  font-size: 1rem; /* Slightly larger label */
-  color: var(--color-text-light);
-  font-weight: 500;
-  margin-bottom: 0.3rem;
+/* 🔑 READABILITY IMPROVEMENT: Increased Label Font Size */
+.login-container .form-field label {
+  font-size: 1.1rem; /* Increased from 1rem */
+  color: var(--color-text); /* Use main text color for high contrast */
+  font-weight: 600; /* Bolder */
+  margin-bottom: 0.5rem; /* Increased spacing */
 }
 
+/* 🔑 READABILITY IMPROVEMENT: Increased Input Font Size and Padding */
 .login-container input {
-  padding: 1rem 1.25rem;
-  border: 1px solid var(--color-border); /* Thinner initial border for sleekness */
-  border-radius: 0.75rem;
-  font-size: 1rem;
+  padding: 1.1rem 1.4rem; /* Increased padding, matching signup */
+  border: 2px solid var(--color-border); /* Slightly thicker initial border */
+  border-radius: 0.85rem; /* Slightly more rounded */
+  font-size: 1.15rem; /* Increased from 1rem */
   color: var(--color-text);
+  line-height: 1.4; /* Ensures better vertical alignment/readability */
   transition: all 0.3s ease;
 }
 
 .login-container input:focus {
   outline: none;
   border-width: 2px;
-  border-color: var(--color-primary); /* Use main primary color for focus */
-  /* Use the lighter color for a soft glow */
-  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.15); 
+  border-color: var(--color-primary); 
+  box-shadow: 0 0 0 5px var(--color-highlight); /* Slightly wider glow */
 }
 
 /* Button Styling - Refined for elegance */
 .login-container button {
-  padding: 1rem;
-  margin-top: 1rem; /* Increased margin-top for separation */
-  border-radius: 0.75rem;
-  font-weight: 600; /* Slightly less bold */
-  font-size: 1.05rem;
+  padding: 1.1rem; /* Increased padding, matching signup */
+  margin-top: 1.5rem; /* Increased margin, matching signup */
+  border-radius: 0.85rem;
+  font-weight: 700; /* Bolder button text */
+  font-size: 1.2rem; /* Increased button text size, matching signup */
   color: var(--color-bg-alt); 
   background-image: var(--gradient-sunset);
   border: none;
@@ -860,24 +855,25 @@ a {
   filter: saturate(1.05) brightness(1.02);
 }
 
-.login-container p {
+/* 🔑 READABILITY IMPROVEMENT: Increased Prompt Font Size */
+.login-container .signup-prompt {
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--color-text-light);
-  margin-top: 1.5rem;
+  margin-top: 2.5rem; /* Increased margin */
 }
 
-.login-container p a {
-  color: var(--color-primary);
+.login-container .signup-prompt a {
+  color: var(--color-primary-dark);
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
+  border-bottom: 2px solid transparent; 
 }
 
-.login-container p a:hover {
-  color: var(--color-primary-dark);
-  text-decoration: none; 
-  border-bottom: 2px solid var(--color-primary); 
+.login-container .signup-prompt a:hover {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
 }
 
 /* 🌙 DARK MODE LOGIN ENHANCEMENTS */
@@ -885,20 +881,226 @@ a {
 [data-theme="dark"] .login-container {
   background-color: var(--color-bg-alt);
   border-color: var(--color-border);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 40px var(--color-shadow);
 }
 
 [data-theme="dark"] .login-container:hover {
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
 }
 
+[data-theme="dark"] .login-container .form-field label {
+    color: var(--color-text);
+}
+
+[data-theme="dark"] .login-container input {
+    border-color: var(--color-border);
+}
+
+
 [data-theme="dark"] .login-container button {
-  /* Use darker primary for button background */
-  background-color: var(--color-primary-dark);
-  color: var(--color-text); /* Use text color (light) for button text */
+  background-image: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: var(--color-text); 
   box-shadow: 0 4px 12px rgba(180, 83, 9, 0.4);
 }
 
 [data-theme="dark"] .login-container button:hover {
-  background-color: var(--color-primary); /* Lighter primary on hover */
+  background-image: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+}
+
+[data-theme="dark"] .login-container .signup-prompt a {
+    color: var(--color-primary);
+}
+
+[data-theme="dark"] .login-container .signup-prompt a:hover {
+    color: var(--color-subtitle);
+    border-bottom-color: var(--color-subtitle);
+}
+
+/* ------------------- SIGNUP PAGE - ENHANCED AUTUMN THEME 🍁 ------------------- */
+
+.signup-page {
+  /* 🔑 Centering properties are already here and effective */
+  min-height: 100vh; 
+  display: flex;
+  align-items: center; /* Vertical centering */
+  justify-content: center; /* Horizontal centering */
+  background-color: var(--color-bg);
+  padding: 2rem;
+  font-family: var(--font-body);
+}
+
+.signup-container {
+  /* Consistent container styling and effect */
+  background-color: var(--color-bg-alt);
+  padding: 3.5rem;
+  border-radius: 1.5rem;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 10px 40px var(--color-shadow);
+  border: 1px solid var(--color-border);
+  transition: all 0.4s cubic-bezier(0.2, 0.5, 0.2, 1);
+}
+
+.signup-container:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.signup-container h2 {
+  font-family: var(--font-title);
+  color: var(--color-title);
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem; 
+  letter-spacing: -0.5px;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  /* Increased gap for better input spacing in a longer form */
+  gap: 1.75rem; 
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 🔑 READABILITY IMPROVEMENT: Increased Label Font Size */
+.signup-form label {
+  font-size: 1.1rem; /* Increased from 1rem */
+  color: var(--color-text); /* Changed from light to main text color for contrast */
+  font-weight: 600; /* Bolder */
+  margin-bottom: 0.5rem; /* Increased spacing */
+  transition: color 0.3s;
+}
+
+/* 🔑 READABILITY IMPROVEMENT: Increased Input Font Size and Padding */
+.signup-form input {
+  padding: 1.1rem 1.4rem; /* Increased padding */
+  border: 2px solid var(--color-border); /* Slightly thicker initial border */
+  border-radius: 0.85rem; /* Slightly more rounded */
+  font-size: 1.15rem; /* Increased from 1rem */
+  color: var(--color-text);
+  line-height: 1.4; /* Ensures better vertical alignment/readability */
+  transition: all 0.3s ease;
+}
+
+.signup-form input:focus {
+  outline: none;
+  border-width: 2px;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 5px var(--color-highlight); /* Slightly wider glow */
+}
+
+/* --- FORM VALIDATION AND ERROR STATES --- */
+
+.signup-form input.is-error {
+  border-color: var(--color-accent); /* Rich crimson for error */
+  background-color: rgba(170, 46, 37, 0.05); /* Light red tint */
+}
+
+.signup-form input.is-error:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 4px rgba(170, 46, 37, 0.15); /* Red focus glow */
+}
+
+/* 🔑 READABILITY IMPROVEMENT: Increased Error Message Font Size */
+.validation-message {
+  margin-top: 0.5rem;
+  font-size: 0.95rem; /* Increased from 0.85rem */
+  color: var(--color-accent); 
+  font-weight: 500;
+  display: none; 
+}
+
+.form-field.has-error .validation-message {
+  display: block;
+}
+
+.signup-btn {
+  /* Styling consistent with login button, using autumn gradient */
+  padding: 1.1rem; /* Increased padding */
+  margin-top: 1.5rem; /* Increased margin */
+  border-radius: 0.85rem;
+  font-weight: 700; /* Bolder button text */
+  font-size: 1.2rem; /* Increased button text size */
+  color: var(--color-bg-alt);
+  background-image: var(--gradient-sunset);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 26px var(--color-shadow);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+}
+
+.signup-btn:hover {
+  background-image: var(--gradient-harvest);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.22);
+  filter: saturate(1.05) brightness(1.02);
+}
+
+/* --- STYLED LOGIN LINK --- */
+
+/* 🔑 READABILITY IMPROVEMENT: Increased Prompt Font Size */
+.login-prompt {
+  text-align: center;
+  font-size: 1rem; /* Increased from 0.95rem */
+  color: var(--color-text-light);
+  margin-top: 2.5rem; 
+}
+
+.login-prompt a {
+  color: var(--color-primary-dark); 
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0 2px;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent; 
+}
+
+.login-prompt a:hover {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary); 
+}
+
+/* 🌙 DARK MODE SIGNUP ENHANCEMENTS */
+
+[data-theme="dark"] .signup-container {
+  background-color: var(--color-bg-alt);
+  border-color: var(--color-border);
+  box-shadow: 0 10px 40px var(--color-shadow);
+}
+
+[data-theme="dark"] .signup-form label {
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .signup-form input {
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .signup-form input.is-error {
+  background-color: rgba(231, 76, 60, 0.15);
+}
+
+[data-theme="dark"] .signup-btn {
+  background-image: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: var(--color-text);
+  box-shadow: 0 4px 12px rgba(180, 83, 9, 0.4);
+}
+
+[data-theme="dark"] .signup-btn:hover {
+  background-image: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+}
+
+[data-theme="dark"] .login-prompt a {
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] .login-prompt a:hover {
+  color: var(--color-subtitle);
+  border-bottom-color: var(--color-subtitle);
 }
